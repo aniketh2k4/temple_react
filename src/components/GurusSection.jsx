@@ -1,75 +1,80 @@
-import PropTypes from 'prop-types'
-import { GURUS_DATA } from '../data/gurus'
-
-const GuruCard = ({ guru }) => {
-    return (
-        <div className="flex flex-col items-center group cursor-pointer text-center">
-            {/* Container with Halo glow on hover */}
-            <div className="relative w-48 h-48 md:w-56 md:h-56 mb-6 rounded-full p-1 transition-all duration-500 ease-in-out">
-                {/* Glow effect layer */}
-                <div className="absolute inset-0 rounded-full bg-gold opacity-0 group-hover:opacity-40 group-hover:blur-md transition-all duration-500 scale-90 group-hover:scale-105"></div>
-
-                {/* Golden border wrapper */}
-                <div className="relative w-full h-full rounded-full border-4 border-gold bg-cream overflow-hidden shadow-xl z-10 transition-transform duration-500 group-hover:-translate-y-2">
-                    <img
-                        src={guru.image}
-                        alt={guru.name}
-                        className="w-full h-full object-cover grayscale opacity-90 transition-all duration-700 group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-110"
-                    />
-                </div>
-            </div>
-
-            {/* Content */}
-            <div className="transition-transform duration-500 group-hover:-translate-y-1">
-                <h4 className="text-2xl font-display font-bold text-maroon mb-1">{guru.name}</h4>
-                <p className="text-gold-dark font-serif font-medium mb-3">{guru.title}</p>
-
-                <div className="flex justify-center mb-3">
-                    <div className="w-8 h-[2px] bg-maroon/30 group-hover:w-16 group-hover:bg-gold transition-all duration-500"></div>
-                </div>
-
-                <p className="text-gray-600 font-serif italic text-sm px-4 max-w-xs transition-opacity duration-300 opacity-80 group-hover:opacity-100">
-                    "{guru.quote}"
-                </p>
-            </div>
-        </div>
-    )
-}
-
-GuruCard.propTypes = {
-    guru: PropTypes.shape({
-        name: PropTypes.string.isRequired,
-        title: PropTypes.string.isRequired,
-        image: PropTypes.string.isRequired,
-        quote: PropTypes.string.isRequired,
-    }).isRequired,
-}
-
+import { images } from '../data/images';
 
 const GurusSection = () => {
     return (
-        <section className="py-24 bg-offwhite/50 relative overflow-hidden">
-            {/* Decorative background mandala element (placeholder) */}
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-cream/30 rounded-full blur-3xl -z-10"></div>
-
-            <div className="container mx-auto px-4 max-w-6xl">
+        <section id="gurus" className="py-24 bg-amber-50/50 reveal">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="text-center mb-16">
-                    <h2 className="text-sm font-bold tracking-widest text-maroon uppercase mb-2">Spiritual Lineage</h2>
-                    <h3 className="text-4xl md:text-5xl font-display font-bold text-gray-900">Our Guiding Lights</h3>
-                    <div className="w-24 h-1 bg-gold mx-auto mt-6"></div>
-                    <p className="mt-6 text-gray-600 font-serif max-w-2xl mx-auto text-lg">
-                        The enlightened masters whose teachings illuminate our spiritual path and guide our temple's traditions.
-                    </p>
+                    <span className="text-maroon-600 font-display tracking-widest text-sm uppercase block mb-3">Spiritual Lineage</span>
+                    <h2 className="text-4xl md:text-5xl font-display font-bold text-maroon-900 mb-6">Guiding Lights</h2>
+                    <div className="w-24 h-px bg-gold-500 mx-auto"></div>
+                    <p className="text-maroon-700 font-serif italic max-w-2xl mx-auto mt-4">"The Guru is the beacon that dispels the darkness of ignorance."</p>
                 </div>
 
-                <div className="flex flex-col md:flex-row justify-center items-center md:items-start gap-12 lg:gap-24">
-                    {GURUS_DATA.map((guru) => (
-                        <GuruCard key={guru.id} guru={guru} />
-                    ))}
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    {/* Guru 1 */}
+                    <div className="group bg-white rounded-xl shadow-[0_10px_30px_-10px_rgba(0,0,0,0.1)] hover:shadow-2xl hover:shadow-gold-500/10 transition-all duration-700 hover:-translate-y-2 border border-gold-100/50 hover:border-gold-400/50 reveal delay-100 overflow-hidden relative">
+                        {/* Halo Background */}
+                        <div className="absolute top-20 left-1/2 transform -translate-x-1/2 w-40 h-40 bg-gold-400/30 rounded-full blur-3xl opacity-0 group-hover:opacity-60 transition-opacity duration-700 pointer-events-none"></div>
+
+                        <div className="p-8 text-center relative z-10">
+                            {/* Image Frame */}
+                            <div className="w-48 h-48 mx-auto rounded-full border-4 border-gold-100 group-hover:border-gold-400 shadow-xl overflow-hidden transition-colors duration-700 relative mb-6">
+                                <img src={images.gurus.guru1} alt="Sri Sadguru Udhava Ramachandra Maharaj" className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-1000 group-hover:scale-110" />
+                                <div className="absolute inset-0 shadow-[inset_0_0_20px_rgba(0,0,0,0.2)] pointer-events-none"></div>
+                            </div>
+
+                            <div className="relative">
+                                <h3 className="font-display font-bold text-maroon-900 text-xl mb-3 group-hover:text-maroon-700 transition-colors">Sri Sadguru Udhava Ramachandra Maharaj</h3>
+                                <div className="w-12 h-px bg-gold-300 mx-auto mb-3 group-hover:w-24 transition-all duration-500"></div>
+                                <p className="text-maroon-800/80 font-serif italic text-sm">"Service to man is service to God."</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* Guru 2 */}
+                    <div className="group bg-white rounded-xl shadow-[0_10px_30px_-10px_rgba(0,0,0,0.1)] hover:shadow-2xl hover:shadow-gold-500/10 transition-all duration-700 hover:-translate-y-2 border border-gold-100/50 hover:border-gold-400/50 reveal delay-200 overflow-hidden relative">
+                        {/* Halo Background */}
+                        <div className="absolute top-20 left-1/2 transform -translate-x-1/2 w-40 h-40 bg-gold-400/30 rounded-full blur-3xl opacity-0 group-hover:opacity-60 transition-opacity duration-700 pointer-events-none"></div>
+
+                        <div className="p-8 text-center relative z-10">
+                            {/* Image Frame */}
+                            <div className="w-48 h-48 mx-auto rounded-full border-4 border-gold-100 group-hover:border-gold-400 shadow-xl overflow-hidden transition-colors duration-700 relative mb-6">
+                                <img src={images.gurus.guru2} alt="Sri Vithala Bhava Maharaj" className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-1000 group-hover:scale-110" />
+                                <div className="absolute inset-0 shadow-[inset_0_0_20px_rgba(0,0,0,0.2)] pointer-events-none"></div>
+                            </div>
+
+                            <div className="relative">
+                                <h3 className="font-display font-bold text-maroon-900 text-xl mb-3 group-hover:text-maroon-700 transition-colors">Sri Vithala Bhava Maharaj</h3>
+                                <div className="w-12 h-px bg-gold-300 mx-auto mb-3 group-hover:w-24 transition-all duration-500"></div>
+                                <p className="text-maroon-800/80 font-serif italic text-sm">"Bhakti is the easiest path to liberation."</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* Guru 3 */}
+                    <div className="group bg-white rounded-xl shadow-[0_10px_30px_-10px_rgba(0,0,0,0.1)] hover:shadow-2xl hover:shadow-gold-500/10 transition-all duration-700 hover:-translate-y-2 border border-gold-100/50 hover:border-gold-400/50 reveal delay-300 overflow-hidden relative">
+                        {/* Halo Background */}
+                        <div className="absolute top-20 left-1/2 transform -translate-x-1/2 w-40 h-40 bg-gold-400/30 rounded-full blur-3xl opacity-0 group-hover:opacity-60 transition-opacity duration-700 pointer-events-none"></div>
+
+                        <div className="p-8 text-center relative z-10">
+                            {/* Image Frame */}
+                            <div className="w-48 h-48 mx-auto rounded-full border-4 border-gold-100 group-hover:border-gold-400 shadow-xl overflow-hidden transition-colors duration-700 relative mb-6">
+                                <img src={images.gurus.guru3} alt="Sri Udhavabhava Maharaj" className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-1000 group-hover:scale-110" />
+                                <div className="absolute inset-0 shadow-[inset_0_0_20px_rgba(0,0,0,0.2)] pointer-events-none"></div>
+                            </div>
+
+                            <div className="relative">
+                                <h3 className="font-display font-bold text-maroon-900 text-xl mb-3 group-hover:text-maroon-700 transition-colors">Sri Udhavabhava Maharaj</h3>
+                                <div className="w-12 h-px bg-gold-300 mx-auto mb-3 group-hover:w-24 transition-all duration-500"></div>
+                                <p className="text-maroon-800/80 font-serif italic text-sm">"Chant the name of the Lord with love."</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
-    )
-}
+    );
+};
 
-export default GurusSection
+export default GurusSection;

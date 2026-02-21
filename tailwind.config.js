@@ -8,42 +8,51 @@ export default {
         extend: {
             colors: {
                 maroon: {
-                    DEFAULT: '#800000',
-                    light: '#A52A2A',
-                    dark: '#4A0000'
+                    50: '#fdf2f2',
+                    100: '#fde8e8',
+                    200: '#fbd5d5',
+                    300: '#f8b4b4',
+                    400: '#f98080',
+                    500: '#f05252',
+                    600: '#e02424',
+                    700: '#c81e1e',
+                    800: '#9b1c1c',
+                    900: '#570000',
+                    950: '#2A0A0A',
                 },
                 gold: {
-                    DEFAULT: '#FFD700',
-                    light: '#FCE670',
-                    dark: '#B8860B'
+                    300: '#fceeb5',
+                    400: '#faca15',
+                    500: '#e3a008',
+                    600: '#c27803',
+                    700: '#9f580a',
                 },
                 cream: '#FFFDD0',
-                sandal: '#E6C280',
-                offwhite: '#FAF9F6'
+                offwhite: '#FAF9F6',
+                sandal: '#f4ecd8',
             },
             fontFamily: {
+                serif: ['Playfair Display', 'serif'],
                 display: ['Cinzel', 'serif'],
-                serif: ['"Playfair Display"', 'serif'],
-                script: ['Laila', 'sans-serif'],
+                script: ['Laila', 'serif'],
+            },
+            backgroundImage: {
+                'mandala-pattern': "url('https://www.transparenttextures.com/patterns/black-linen.png')",
+            },
+            animation: {
+                'slow-pan': 'pan 20s infinite alternate',
+                'fade-in-down': 'fadeInDown 1s ease-out forwards',
             },
             keyframes: {
-                blob: {
-                    "0%": { transform: "translate(0px, 0px) scale(1)" },
-                    "33%": { transform: "translate(30px, -50px) scale(1.1)" },
-                    "66%": { transform: "translate(-20px, 20px) scale(0.9)" },
-                    "100%": { transform: "translate(0px, 0px) scale(1)" },
+                pan: {
+                    '0%': { transform: 'scale(1.0)' },
+                    '100%': { transform: 'scale(1.1)' },
+                },
+                fadeInDown: {
+                    '0%': { opacity: '0', transform: 'translateY(-20px)' },
+                    '100%': { opacity: '1', transform: 'translateY(0)' },
                 }
             }
-        },
-        container: {
-            center: true,
-            padding: {
-                DEFAULT: '1rem',
-                sm: '2rem',
-                lg: '4rem',
-                xl: '5rem',
-                '2xl': '6rem',
-            },
         },
     },
     plugins: [],

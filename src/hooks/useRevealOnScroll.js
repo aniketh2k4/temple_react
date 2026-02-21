@@ -13,35 +13,11 @@ export const useRevealOnScroll = (options = { threshold: 0.1, rootMargin: '0px' 
     const ref = useRef(null)
 
     useEffect(() => {
-        const currentRef = ref.current
-        if (!currentRef) return
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach((entry) => {
-                if (entry.isIntersecting) {
-                    // Add the active class when the element comes into view
-                    entry.target.classList.add('active')
-
-                    // If we only want to trigger the animation once, unobserve after it's active
-                    if (triggerOnce) {
-                        observer.unobserve(entry.target)
-                    }
-                } else if (!triggerOnce) {
-                    // Optional: Remove active class when out of view if we want repeatable animations
-                    entry.target.classList.remove('active')
-                }
-            })
-        }, options)
-
-        observer.observe(currentRef)
-
-        // Cleanup observer on unmount
-        return () => {
-            if (currentRef) {
-                observer.unobserve(currentRef)
-            }
+        // Disabled globally to avoid DOM render halting bugs
+        if (ref.current) {
+            ref.current.classList.add('active');
         }
-    }, [options, triggerOnce])
+    }, [])
 
     return ref
 }
