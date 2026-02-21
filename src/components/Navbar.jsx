@@ -5,17 +5,16 @@ const Navbar = () => {
     const [isScrolled, setIsScrolled] = useState(false);
 
     useEffect(() => {
-        // Disabled global scroll
-        // const handleScroll = () => {
-        //     setIsScrolled(window.scrollY > 20);
-        // };
-        // window.addEventListener('scroll', handleScroll, { passive: true });
-        // return () => window.removeEventListener('scroll', handleScroll);
+        const handleScroll = () => {
+            setIsScrolled(window.scrollY > 50);
+        };
+        window.addEventListener('scroll', handleScroll, { passive: true });
+        return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
     return (
         <nav id="navbar"
-            className={`glass-nav fixed w-full z-50 border-b border-gold-600/30 transition-all duration-500 shadow-lg top-0 ${isScrolled ? 'py-2 bg-maroon-950/90 backdrop-blur-md' : 'py-4'}`}>
+            className={`glass-nav fixed w-full z-50 border-b border-gold-600/30 transition-all duration-500 top-0 ${isScrolled ? 'shadow-xl bg-maroon-950/95 py-1' : 'shadow-lg py-4'}`}>
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex justify-between h-20 items-center transition-all duration-300" id="nav-container">
                     <div className="flex-shrink-0 flex items-center group cursor-pointer">
