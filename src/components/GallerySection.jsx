@@ -1,4 +1,5 @@
 import { images } from '../data/images';
+import instagramImage from "../assets/gallery/Instagram.jpg";
 
 const GallerySection = () => {
     return (
@@ -39,6 +40,31 @@ const GallerySection = () => {
                             </div>
                         </div>
                     </div>
+
+                    {/* Instagram Item */}
+                    {/* <a
+                        href="https://www.instagram.com/rukmini.panduranga.devalayam/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="group relative overflow-hidden rounded-xl shadow-lg cursor-pointer transform hover:-translate-y-1 transition-all duration-300 block"
+                    >
+                        <img src={instagramImage} alt="Panduranga Instagram"
+                            className="w-full h-full object-cover transition-transform duration-500 hover:scale-105" />
+                    </a> */}
+                    <a
+                        href="https://www.instagram.com/rukmini.panduranga.devalayam/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="block rounded-xl overflow-hidden shadow-lg transition-transform duration-300 hover:-translate-y-1"
+                    >
+                        <div className="bg-white flex items-center justify-center p-6 h-64">
+                            <img
+                                src={instagramImage}
+                                alt="Panduranga Instagram"
+                                className="max-h-full max-w-full object-contain"
+                            />
+                        </div>
+                    </a>
 
                     <div
                         className="lg:row-span-2 group relative overflow-hidden rounded-xl shadow-lg bg-maroon-100 flex items-center justify-center cursor-pointer transform hover:-translate-y-1 transition-all duration-300">

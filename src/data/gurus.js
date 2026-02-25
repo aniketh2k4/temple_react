@@ -1,25 +1,28 @@
-import { images } from './images'
+import { images } from './images';
 
-export const GURUS_DATA = [
+export const gurus = [
     {
-        id: 1,
-        name: 'Swami Sivananda',
-        title: 'Founder Acharya',
+        id: "udhava-ramachandra-maharaj",
+        name: "Sri Sadguru Udhava Ramachandra Maharaj",
+        subtitle: "Spiritual Guide",
+        quote: "Service to man is service to God.",
         image: images.gurus.guru1,
-        quote: 'Serve, Love, Give, Purify, Meditate, Realize.',
+        description: "A beacon of light who dispels the darkness of ignorance. Sri Sadguru Udhava Ramachandra Maharaj dedicated his life to spiritual awakening and serving humanity, leaving behind a legacy of devotion and wisdom."
     },
     {
-        id: 2,
-        name: 'Sri Ramakrishna',
-        title: 'Paramhamsa',
+        id: "vitthala-bhava-maharaj",
+        name: "Sri Vitthala Bhava Maharaj",
+        subtitle: "Philosopher",
+        quote: "Bhakti is the easiest path to liberation.",
         image: images.gurus.guru2,
-        quote: 'As many faiths, so many paths.',
+        description: "A visionary philosopher and devoted soul. Sri Vitthala Bhava Maharaj illuminated the path of Bhakti, teaching that the simplest acts of love and devotion lead to ultimate liberation."
     },
     {
-        id: 3,
-        name: 'Sri Aurobindo',
-        title: 'Maharishi',
+        id: "udhavababa-maharaj",
+        name: "Sri Udhavababa Maharaj",
+        subtitle: "Saint & Teacher",
+        quote: "Chant the name of the Lord with love.",
         image: images.gurus.guru3,
-        quote: 'All life is Yoga.',
+        description: "A revered saint and teacher who inspired countless seekers. Sri Udhavababa Maharaj emphasized chanting the divine name with love as the ultimate medicine for the soul's liberation."
     }
-]
+];

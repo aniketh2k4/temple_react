@@ -59,8 +59,22 @@ const HeroSection = () => {
 
                 <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
                     <a href="#about-deity"
-                        className="group relative px-8 py-4 bg-maroon-800/80 hover:bg-maroon-700 backdrop-blur-sm text-gold-100 font-display tracking-widest text-sm uppercase transition-all duration-500 border border-gold-600/30 overflow-hidden shadow-lg hover:shadow-gold-500/20 rounded-sm">
-                        <span className="relative z-10 group-hover:text-white flex items-center transition-colors">
+                        className="group relative px-8 py-4 border-2 rounded-md font-serif tracking-widest text-sm uppercase transition-all duration-300 shadow-lg hover:shadow-xl hover:shadow-[0_0_15px_rgba(212,160,23,0.6)] flex items-center justify-center overflow-hidden"
+                        style={{
+                            borderColor: "#d4a017",
+                            color: "#d4a017",
+                            backgroundColor: "transparent",
+                        }}
+                        onMouseEnter={(e) => {
+                            e.currentTarget.style.backgroundColor = "#d4a017";
+                            e.currentTarget.style.color = "#4a1f06";
+                        }}
+                        onMouseLeave={(e) => {
+                            e.currentTarget.style.backgroundColor = "transparent";
+                            e.currentTarget.style.color = "#d4a017";
+                        }}
+                    >
+                        <span className="relative z-10 flex items-center transition-colors">
                             Discover More
                             <svg className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform duration-300"
                                 fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -68,9 +82,6 @@ const HeroSection = () => {
                                     d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
                             </svg>
                         </span>
-                        <div
-                            className="absolute inset-0 bg-gold-600/10 transform -translate-x-full group-hover:translate-x-0 transition-transform duration-500 ease-in-out">
-                        </div>
                     </a>
                 </div>
             </div>

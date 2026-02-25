@@ -60,6 +60,12 @@ const Navbar = () => {
                             <span
                                 className="absolute bottom-0 left-0 w-0 h-0.5 bg-gold-400 transition-all duration-300 group-hover:w-full"></span>
                         </a>
+                        <a href="#temples"
+                            className="text-gold-300 hover:text-gold-400 font-display text-sm tracking-wider uppercase py-2 border-b-2 border-transparent hover:border-gold-400 transition-all duration-300 relative group">
+                            Temples
+                            <span
+                                className="absolute bottom-0 left-0 w-0 h-0.5 bg-gold-400 transition-all duration-300 group-hover:w-full"></span>
+                        </a>
                         <a href="#donation"
                             className="px-5 py-2 rounded-full border border-gold-500 text-gold-400 hover:bg-gold-500 hover:text-maroon-900 font-display text-sm tracking-wider uppercase transition-all duration-300 shadow-lg hover:shadow-gold-500/20 transform hover:-translate-y-1">Donate</a>
                     </div>
@@ -92,6 +98,8 @@ const Navbar = () => {
                         className="block px-4 py-3 text-gold-300 hover:text-gold-400 hover:bg-maroon-800 rounded-md font-display text-sm tracking-widest uppercase transition-colors">Gallery</a>
                     <a href="#gurus" onClick={() => setIsOpen(false)}
                         className="block px-4 py-3 text-gold-300 hover:text-gold-400 hover:bg-maroon-800 rounded-md font-display text-sm tracking-widest uppercase transition-colors">Gurus</a>
+                    <a href="#temples" onClick={() => setIsOpen(false)}
+                        className="block px-4 py-3 text-gold-300 hover:text-gold-400 hover:bg-maroon-800 rounded-md font-display text-sm tracking-widest uppercase transition-colors">Temples</a>
                     <a href="#donation" onClick={() => setIsOpen(false)}
                         className="block px-4 py-3 text-gold-300 hover:text-white hover:bg-maroon-800 rounded-md font-display text-sm tracking-widest uppercase transition-colors font-bold">Donate</a>
                 </div>
