@@ -1,7 +1,7 @@
 const Map = () => {
     return (
         <section id="map"
-            className="h-[400px] w-full relative grayscale transition-all duration-1000" style={{ backgroundColor: '#0a0a0a' }}>
+            className="h-[400px] w-full relative transition-all duration-1000" style={{ backgroundColor: '#0a0a0a' }}>
             <iframe
                 title="Temple Location Map"
                 src="https://www.google.com/maps?q=17.6849035,78.1169695&z=17&output=embed"

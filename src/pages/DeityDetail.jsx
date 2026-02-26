@@ -13,6 +13,8 @@ const templeDataMap = {
 
 const DeityDetail = () => {
     const { templeName, deityId } = useParams();
+    const isKalabhairava = templeName === "kalabhairava";
+    const isSangameshwara = templeName === "sangameshwara";
     const deities = templeDataMap[templeName] || [];
     const deity = deities.find(d => String(d.id) === deityId);
 
@@ -36,7 +38,7 @@ const DeityDetail = () => {
             case 'sangameshwara':
                 return 'bg-gradient-to-b from-[#0f1e3a] via-[#142a4f] to-[#0d1a33]';
             case 'kalabhairava':
-                return 'bg-gradient-to-b from-[#1a1a1a] via-[#222] to-[#111]';
+                return 'bg-gradient-to-b from-red-950 via-red-900 to-red-800';
             default:
                 return 'bg-cream';
         }
@@ -56,9 +58,9 @@ const DeityDetail = () => {
         }
     };
 
-    const isDark = templeName === 'sangameshwara' || templeName === 'kalabhairava';
-    const textColor = isDark ? 'text-white' : 'text-maroon-900';
-    const descColor = isDark ? 'text-gray-300' : 'text-gray-700';
+    const isDark = templeName === 'sangameshwara' || isKalabhairava;
+    const textColor = isKalabhairava ? "text-[#f5d26a]" : isDark ? 'text-white' : 'text-maroon-900';
+    const descColor = isKalabhairava ? "text-yellow-200/90" : isDark ? 'text-gray-300' : 'text-gray-700';
     const quoteBg = isDark ? 'bg-black/20' : 'bg-maroon-50';
     const quoteBorder = isDark ? 'border-white/10' : 'border-maroon-100';
 
@@ -118,12 +120,17 @@ const DeityDetail = () => {
                         <p className={`text-xl ${descColor} italic leading-relaxed`}>"May the divine grace of {deity.name} bring peace and prosperity to all who seek refuge in its divine presence."</p>
                     </div>
 
-                    {/* Back to Temple button */}
                     <Link
                         to={`/temple/${templeName}`}
-                        className={`inline-flex items-center justify-center px-8 py-4 rounded-full font-bold uppercase tracking-widest transition-colors shadow-lg border border-[#d4a017]/30 transform hover:-translate-y-1 ${templeName === 'panduranga' ? 'bg-[#7a0c0c] text-[#f9e6c5] hover:bg-[#600909]' :
-                                templeName === 'kodandarama' ? 'bg-[#8a3b0f] text-[#ffe5c3] hover:bg-[#6b2f08]' :
-                                    'bg-maroon-900 text-gold-100 hover:bg-maroon-800'
+                        className={`inline-flex items-center justify-center px-8 py-4 rounded-full font-bold uppercase tracking-widest transition-all duration-300 shadow-lg transform hover:-translate-y-1 ${isKalabhairava
+                                ? "bg-[#d4a017] text-red-950 hover:bg-yellow-400 hover:text-red-900"
+                                : isSangameshwara
+                                    ? "bg-teal-700 text-yellow-200 border border-yellow-300 hover:bg-teal-600 hover:text-white"
+                                    : templeName === 'panduranga'
+                                        ? "bg-[#7a0c0c] text-[#f9e6c5] hover:bg-[#600909]"
+                                        : templeName === 'kodandarama'
+                                            ? "bg-[#8a3b0f] text-[#ffe5c3] hover:bg-[#6b2f08]"
+                                            : "bg-maroon-900 text-gold-100 hover:bg-maroon-800"
                             }`}
                     >
                         <svg className="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">

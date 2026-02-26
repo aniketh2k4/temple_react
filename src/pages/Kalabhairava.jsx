@@ -25,7 +25,7 @@ import Footer from '../components/kalabhairava/Footer';
 
 const Kalabhairava = () => {
     return (
-        <div className="min-h-screen font-sans" style={{ backgroundColor: '#0a0a0a', color: '#cfcfcf' }}>
+        <div className="min-h-screen font-sans bg-gradient-to-b from-red-900 via-red-800 to-red-700 text-[#f5d26a]">
             <Navbar />
             <Hero />
             <DeitySection deities={kalabhairavaDeities} templeName="kalabhairava" />
@@ -34,11 +34,11 @@ const Kalabhairava = () => {
             <Gurus />
             <TempleExplorer
                 currentTemple="kalabhairava"
-                accentColor="#e5e5e5"
-                backgroundColor="#111111"
-                cardBackground="#1a1a1a"
-                textColor="#cfcfcf"
-                borderColor="#2a2a2a"
+                accentColor="#f5d26a"
+                backgroundColor="transparent"
+                cardBackground="rgba(0, 0, 0, 0.2)"
+                textColor="#f5d26a"
+                borderColor="rgba(234, 179, 8, 0.4)"
             />
             <Testimonials />
             <Donation />
