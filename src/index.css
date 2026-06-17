@@ -1,0 +1,50 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+    font-size: 88%;
+}
+
+@media (min-width: 1536px) {
+    html {
+        font-size: 85%;
+    }
+}
+
+@layer base {
+    html {
+        @apply scroll-smooth;
+    }
+}
+
+@layer utilities {
+    .text-shadow-hero {
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5), 0 0 20px rgba(0, 0, 0, 0.3);
+    }
+
+    .perspective-1000 {
+        perspective: 1000px;
+    }
+
+    .glass-nav {
+        @apply bg-maroon-950/90 backdrop-blur-md border-b border-gold-600/30;
+    }
+
+    /* .reveal {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: all 1s ease-out;
+    }
+
+    .reveal.active {
+        opacity: 1;
+        transform: translateY(0);
+    } */
+
+    /* temporarily disable reveal animation */
+    .reveal {
+        opacity: 1 !important;
+        transform: none !important;
+    }
+}

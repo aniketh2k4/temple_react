@@ -1,0 +1,65 @@
+import qrImage from "../assets/qrcode/qr.jpeg";
+
+
+const DonationSection = () => {
+    return (
+        <section id="donation" className="py-24 bg-maroon-950 relative overflow-hidden reveal">
+            {/* Background Elements */}
+            <div
+                className="absolute -top-24 -right-24 w-96 h-96 bg-maroon-800 rounded-full blur-[100px] opacity-40 animate-pulse">
+            </div>
+            <div
+                className="absolute -bottom-24 -left-24 w-96 h-96 bg-gold-600 rounded-full blur-[100px] opacity-20 animate-pulse delay-700">
+            </div>
+
+            <div className="max-w-4xl mx-auto px-4 relative z-10">
+                <div
+                    className="bg-gradient-to-br from-maroon-900 to-maroon-950 border border-maroon-700/50 p-8 md:p-12 rounded-2xl shadow-2xl text-center transform hover:scale-[1.01] transition-transform duration-500 hover:shadow-maroon-900/50 hover:border-gold-500/30">
+                    <span className="text-gold-500 font-script text-2xl mb-2 block">Dāna</span>
+                    <h2 className="text-3xl md:text-5xl font-display font-bold text-white mb-6">Support the Divine Cause</h2>
+                    <p className="text-gray-300 mb-10 font-serif leading-relaxed max-w-2xl mx-auto">
+                        "The act of giving is the path to spiritual abundance." Your contributions help us maintain the
+                        temple, feed the needy (Annadanam), and preserve our heritage.
+                    </p>
+
+                    <div className="flex flex-col md:flex-row justify-center gap-6 items-center">
+                        <div
+                            className="bg-white/5 border border-white/10 p-6 rounded-xl w-full md:w-auto text-left min-w-[300px] backdrop-blur-sm hover:bg-white/10 transition-colors cursor-pointer group">
+                            <h4
+                                className="text-gold-400 font-display font-bold mb-4 uppercase text-sm tracking-wider border-b border-white/10 pb-2 group-hover:border-gold-500/50 transition-colors">
+                                Bank Transfer</h4>
+                            <div
+                                className="space-y-2 text-sm font-mono text-gray-300 group-hover:text-gray-100 transition-colors">
+                                <p>ACC: <span className="text-white select-all">40840621490</span></p>
+                                <p>IFSC: <span className="text-white select-all">SBIN0015519</span></p>
+                                <p>NAME: <span className="text-white">SREE SADHGURU RAMBAVA SEVA SOCIETY</span></p>
+                            </div>
+                        </div>
+
+                        <div className="h-12 w-px bg-white/10 hidden md:block"></div>
+                        <div className="w-full md:w-auto h-px bg-white/10 md:hidden"></div>
+
+                        <div className="text-center group cursor-pointer">
+    <div
+        className="w-32 h-32 bg-white rounded-lg mx-auto mb-3 flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300 p-2">
+        
+        <img
+            src={qrImage}
+            alt="Temple Donation QR Code"
+            className="w-full h-full object-contain rounded"
+        />
+
+    </div>
+
+    <span className="text-gold-400 text-xs uppercase tracking-widest font-bold group-hover:text-white transition-colors">
+        Scan to Donate
+    </span>
+</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    );
+};
+
+export default DonationSection;
